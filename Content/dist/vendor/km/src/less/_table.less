@@ -1,0 +1,160 @@
+﻿.k-table
+{
+    width: 100%;
+    margin-bottom: 0;
+    border-collapse: collapse;
+    border-spacing: 0;
+    background: none;
+    border-bottom: 1px solid #ddd;
+
+    caption
+    {
+        color: #777;
+        padding-bottom: 8px;
+        padding-top: 8px;
+        text-align: left;
+    }
+
+    th
+    {
+        text-align: left;
+        background:#f5f5f5;
+    }
+
+    > thead,
+    > tbody,
+    > tfoot
+    {
+        >tr
+        {
+            >th,
+            >td
+            {
+                vertical-align: middle;
+                border-top: 1px solid #ddd;
+                line-height: 1.42857;
+                padding: 8px;
+            }
+
+            &:last-child > td
+            {
+                /*border-bottom: 1px solid #ddd;*/
+            }
+        }
+    }
+
+    >thead > tr > th
+    {
+        border-top: none;
+        border-bottom: 2px solid #ddd;
+    }
+
+    > caption + thead,
+    > colgroup + thead,
+    > thead:first-child
+    {
+        > tr:first-child
+        {
+            > th,
+            > td
+            {
+                border-top: 0;
+            }
+        }
+    }
+}
+
+.k-table-bordered
+{
+    border: 1px solid #ddd;
+    border-left: none;
+    border-radius: 4px;
+
+
+    > thead,
+    > tbody,
+    > tfoot
+    {
+        > tr
+        {
+            > th,
+            > td
+            {
+                border-left: 1px solid #ddd;
+            }
+        }
+    }
+
+    > thead > tr
+    {
+        > th
+        {
+            border-bottom: none;
+        }
+    }
+
+    >thead,
+    >tbody
+    {
+        &:last-child
+        {
+            tr
+            {
+                &:last-child
+                {
+                    th:first-child,
+                    td:first-child
+                    {
+                        border-radius: 0 0 0 4px;
+                    }
+
+                    td
+                    {
+                        border-bottom:none;
+                    }
+                }
+            }
+        }
+
+        &:first-child
+        {
+            >tr
+            {
+                &:first-child
+                {
+                    th:last-child,
+                    td:last-child
+                    {
+                        border-radius: 0 4px 0 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.k-table-striped
+{
+
+    >tbody > tr.even
+    {
+        background-color: #F9F9F9;
+    }
+
+    > tbody > tr:nth-child(even)
+    {
+        background-color: #F9F9F9!important;
+        
+    }
+
+    
+}
+
+
+.k-table-hover
+{
+    > tbody > tr:hover
+    {
+        background-color: #f5f5f5;
+    }
+}

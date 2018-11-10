@@ -1,0 +1,99 @@
+.k-resizable-container
+{
+    position: relative;
+    border: 1px solid #ddd;
+
+    .k-resizable-handle
+    {
+        position: absolute;
+        z-index: 10;
+        display: none;
+
+        &.k-resizable-handle-left,
+        &.k-resizable-handle-right
+        {
+            left: -1px;
+            top: 0;
+            width: 5px;
+            bottom: 0;
+            cursor: ew-resize;
+            border-left: 1px solid #ddd;
+
+            &.active
+            {
+                border-left: 1px dashed #ddd;
+            }
+        }
+
+
+        &.k-resizable-handle-right
+        {
+            cursor: ew-resize;
+            right: -1px;
+            left: auto;
+            border-right: 1px solid #ddd;
+            border-left: none;
+
+            &.active
+            {
+                border-left: none;
+                border-right: 1px dashed #ddd;
+            }
+        }
+
+        &.k-resizable-handle-top,
+        &.k-resizable-handle-bottom
+        {
+            top: -1px;
+            height: 5px;
+            cursor: n-resize;
+            left: 0;
+            right: 0;
+            border-top: 1px solid #ddd;
+
+             &.active
+            {
+                border-top: 1px dashed #ddd;
+            }
+
+        }
+
+        &.k-resizable-handle-bottom
+        {
+            top: auto;
+            bottom: -1px;
+            border-top: none;
+            border-bottom: 1px solid #ddd;
+
+             &.active
+            {
+                 border-top:none;
+                border-bottom: 1px dashed #ddd;
+            }
+        }
+    }
+
+    .k-resizable-handle-minbar
+    {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 10px;
+        height: 10px;
+        background: url('../images/resizable/rzbar.png');
+        z-index: 10;
+        cursor: se-resize;
+        display: none;
+    }
+}
+
+.k-resizable-cover
+{
+    position:absolute;
+    left:0;
+    top:0;
+    z-index:200;
+    overflow:hidden;
+    border:1px dashed #3b5a82;
+    display:none;
+}

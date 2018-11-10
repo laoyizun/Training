@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no,email=no" />
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1, minimum-scale=1" user-scalable="no">
+<title>课程管理-新增课程</title>
+<!--公用样式-->
+<link href="../Content/dist/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+<link href="../Content/dist/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+<link href="../Content/dist/vendor/easyui/themes/bootstrap/easyui.css" rel="stylesheet" />
+<link href="../Content/dist/vendor/easyui/themes/icon.css" rel="stylesheet" />
+<link href="../Content/dist/vendor/km/css/km.min.css" rel="stylesheet" />
+<link href="../Content/dist/css/widget.min.css" rel="stylesheet" />
+
+<!--公用样式-->
+<link href="../Content/dist/css/style.min.css" rel="stylesheet" />
+<!--私有样式-->
+<!--私有样式-->
+<link href="../Content/dist/css/training-manage.min.css" rel="stylesheet" />
+
+</head>
+<!--
+用到样式文件
+_toggleList.scss
+_imgWrap.scss
+_tip.scss
+_btn.scss
+-->
+
+<body class="bg-white">
+   <!--头部 开始-->
+   <div class="header">
+    <!--头部导航条 开始-->
+    
+    <!--头部导航条 结束-->
+    <!--banner图片 开始-->
+    <div class="banner personal-banner" style="background:url(../Content/dist/images/Bgbanner.jpg) no-repeat;background-size:cover;">
+    </div>
+    <!--banner图片 结束-->
+    <div class="clearfix"></div>
+</div>
+   <!-- 左菜单 开始 -->
+   <div class="content-wrap" id="divcenter">
+        <div class="content-menu bg-white pull-left">
+            <div class="menu-head">
+                <span>
+                    <img src="../Content/dist/images/iconSearchType.png">&nbsp;
+                    <span class="font-red">课程管理</span>
+                </span>
+            </div>
+            <div class="menu-body">
+                <ul>
+                    <li class="menu-item active">
+                        <a href="reception-apply.html">课程列表</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <!-- 左菜单 结束 -->
+        <div class="content-panel pull-left">
+            <!--导航条 开始-->
+            <div class="panel-crumb">
+                <div class="pull-left">
+                    <span class="fa fa-file-text-o"></span>
+                    <ul>
+                        <li><a>课程管理</a><a style="opacity:0.5">&nbsp;/&nbsp;</a> <a href="###" class="font-red">新增课程</a></li>
+                    </ul>
+                </div>
+                <div class="pull-right">
+                    <button class="k-btn k-btn-default btn-return">
+                        <i class="fa fa-reply" aria-hidden="true"></i>
+                        返回
+                    </button>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <!--导航条 结束-->
+            <form id="form" action="" method="post">
+                <!--_toggleList.scss-->
+                <div class="toggle-list">
+                    <div class="toggle-list-title">
+                        <i class="fa fa-caret-down"></i>课程信息
+                    </div>
+                    <div class="toggle-list-main">
+                        <table id="Tbl">
+                            <tbody>
+                                <tr>
+                                    <td class="title">
+                                        <span class="require">*</span>课程名称：
+                                    </td>
+                                    <td class="operation" colspan="3">
+                                        <input class="k-form-control" style="width:100%" type="text" name="courseName"
+                                            data-rules="{rules:{required:true},messages:{required:'请输入课程名称'}}">
+                                    </td>
+                                   
+                                    <td class="title">
+                                        课程编码：
+                                    </td>
+                                    <td class="operation">
+                                        <input class="k-form-control" type="text">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="title">
+                                        期数：
+                                    </td>
+                                    <td class="operation">
+                                        <input class="k-form-control" type="text">
+                                    </td>
+
+                                    <td class="title">
+                                        <span class="require">*</span>课程类型：
+                                    </td>
+                                    <td class="operation">
+                                        <input class="k-form-control" type="text" name="courseType" data-rules="{rules:{required:true},messages:{required:'请输入课程类型'}}">
+                                    </td>
+
+                                    <td class="title">
+                                        上课人数：
+                                    </td>
+                                    <td class="operation">
+                                        <input class="k-form-control" type="text">
+                                    </td>
+
+
+                                    <td></td>
+                                </tr>
+
+                                <tr>
+                                    <td class="title">
+                                        课程学分：
+                                    </td>
+                                    <td class="operation">
+                                        <input class="k-form-control" type="text">
+                                    </td>
+
+                                    <td class="title">
+                                        <span class="require">*</span>报名开始时间：
+                                    </td>
+                                    <td class="operation">
+                                        <div class="k-input-group float-left">
+                                            <input class="k-form-control data-time-input beginTime" style="z-index: 112;position: absolute"
+                                                name="dateBeginName" id="beginTime" readonly="readonly" placeholder=""
+                                                data-rules="{rules:{required:true},messages:{required:'请输入报名开始时间'}}"
+                                                data-module="datepicker" data-options="{
+                                                            format:'yyyy-MM-dd'
+                                                       }"
+                                                type="text">
+                                            <span class="k-input-group-btn">
+                                                <button type="button" class="k-btn k-btn-default" id="beginTimetip"
+                                                    style="z-index:112;margin: 1px;
+                                                height: 32px;
+                                                border: none;">
+                                                    <span class="fa fa-calendar"></span>
+                                                </button>
+                                            </span>
+                                        </div>
+
+                                    </td>
+
+                                    <td class="title">
+                                        <span class="require">*</span>报名结束时间：
+                                    </td>
+                                    <td class="operation">
+                                        <div class="k-input-group float-left">
+                                            <input class="k-form-control data-time-input endTime" style="position: absolute"
+                                                name="dateEndName" id="endTime" readonly="readonly" placeholder=""
+                                                data-rules="{rules:{required:true,compareTime:true},messages:{required:'请输入报名结束时间'}}"
+                                                data-module="datepicker" data-options="{
+                                                            format:'yyyy-MM-dd'
+                                                       }"
+                                                type="text">
+                                            <span class="k-input-group-btn">
+                                                <button type="button" class="k-btn k-btn-default" id="endTimetip" style="z-index:112;margin: 1px;
+                                                height: 32px;
+                                                border: none;">
+                                                    <span class="fa fa-calendar"></span>
+                                                </button>
+                                            </span>
+                                        </div>
+
+                                    </td>
+
+
+                                    <td></td>
+                                </tr>
+
+                                <tr>
+                                    <td class="title ">
+                                        <span class="require">*</span>上课时间：
+                                    </td>
+                                    <td class="operation">
+                                        <div class="k-input-group float-left">
+                                            <input class="k-form-control data-time-input data-time-input-add" style="z-index: 112;position: absolute"
+                                                name="courseDate" readonly="readonly" placeholder="" data-rules="{rules:{required:true},messages:{required:'请输入上课时间'}}"
+                                                data-module="datepicker" data-options="{
+                                                                    format:'yyyy-MM-dd'
+                                                               }"
+                                                type="text">
+                                            <span class="k-input-group-btn">
+                                                <button type="button" class="k-btn k-btn-default courseTime" name="courseTimetip"
+                                                    style="z-index:112;margin: 1px;
+                                                height: 32px;
+                                                border: none;">
+                                                    <span class="fa fa-calendar"></span>
+                                                </button>
+                                            </span>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <tr class=" courseTimemod none ">
+                                    <td class="title">
+                                    </td>
+                                    <td class="operation">
+                                        <div class="k-input-group float-left">
+                                            <input class="k-form-control data-time-input data-time-input-add" value='2018-10-9'
+                                                style="z-index: 112;position: absolute" name="courseDate" readonly="readonly"
+                                                placeholder="" data-rules="{rules:{required:true},messages:{required:'请输入上课时间'}}"
+                                                data-module="datepicker" data-options="{
+                                                                            format:'yyyy-MM-dd'
+                                                                       }"
+                                                type="text">
+                                            <span class="k-input-group-btn">
+                                                <button type="button" class="k-btn k-btn-default courseTime" name="courseTimetip"
+                                                    style="z-index:112;margin: 1px;
+                                                height: 32px;
+                                                border: none;">
+                                                    <span class="fa fa-calendar"></span>
+                                                </button>
+                                            </span>
+                                        </div>
+                                    <td>
+                                        <div class="delbtn" name="delBtn">-</div>
+                                    </td>
+                                    </td>
+                                </tr>
+
+
+
+                                <!--添加时间  -->
+                                <tr>
+                                    <td></td>
+                                    <td class="add-time">
+                                        <div class="addbtn" style="cursor:pointer">
+                                            &nbsp; <span class="addbtn-word">添加时间</span>
+                                            <div class="addbtn-blue">+</div>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td class="title img-wrap-title">
+                                        课程封面：
+                                    </td>
+
+                                    <td>
+                                        <div class="operation img-wrap">
+                                            <div class="show-img" style="display:none;"></div>
+                                            <div class="upload-img" data-id="#img" id="imgBox">
+                                                <span class="fa fa-upload"></span>
+                                                <span class="attach-tit">上传图片</span>
+                                            </div>
+                                            <input type="hidden" id="img" name="imgName">
+                                        </div>
+                                    </td>
+                                </tr>
+
+
+
+
+                                <tr>
+                                    <td class="title img-wrap-title">
+                                        课程介绍：
+                                    </td>
+                                    <td colspan="5">
+                                        <textarea rows="1" cols="64" class="textare-box"></textarea>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="title">
+                                        授课方式：
+                                    </td>
+                                    <td class="operation">
+                                        <select class="k-form-control" id="teachWay">
+
+                                            <option value="1" selected="selected">面授</option>
+                                            <option value="2">网络教育</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <!-- 网络：课程地址
+                             面授：上课地点 -->
+                                    <td class="title faceCourse">
+                                        上课地点：
+                                    </td>
+                                    <td class="title webCourse noneAddress">
+                                        课程地址：
+                                    </td>
+                                    <td class="operation" colspan="3">
+                                        <input class="k-form-control" style="width:100%" type="text">
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr class="">
+                                    <td class="title">
+                                        作业地址：
+                                    </td>
+                                    <td class="operation" colspan="3">
+                                        <input class="k-form-control" style="width:100%" type="text">
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr class="">
+                                    <td class="title">
+                                        问卷地址：
+                                    </td>
+                                    <td class="operation" colspan="3">
+                                        <input class="k-form-control" style="width:100%" type="text">
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class="title">
+                                        主办部门：
+                                    </td>
+                                    <td class="operation" colspan="3">
+                                        <input class="k-form-control" style="width:100%" type="text">
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class="title">
+                                        参与部门：
+                                    </td>
+
+
+                                    <td class="operation" colspan="3">
+                                        <div class="k-input-group k-jumpout">
+                                            <input type="text" class="k-form-control"placeholder="请选择" style="width:100%;border-right: 0"
+                                                name="input5" readonly="readonly" placeholder="" />
+                                            <span class="k-input-group-btn">
+                                                <button type="button" class="k-btn k-btn-default">
+                                                    <span class="fa fa-list"></span>
+                                                </button>
+                                            </span>
+                                        </div>
+                                    </td>
+                                    <td></td>
+                                    <div class="k-window k-window-none " id="k-window-1">
+                                        <h4 class="k-window-header">
+                                            <span class="k-window-title">弹出选择</span>
+                                            <span class="k-window-close" role="kwin_close">×</span></h4>
+                                        <div class="k-window-container" style="padding: 0px; overflow-y: hidden; height: 372px;">
+                                            <iframe frameborder="0" width="100%" scrolling="auto" style="height: 372px;">
+                                            </iframe></div>
+                                        <div class="k-window-footer" style="display: block;">
+                                            <button type="button" class="k-btn k-btn-primary k-btn-inner " role="kwin_ok">确定</button>
+                                            <button type="button" class="k-btn k-btn-default k-btn-inner " role="kwin_close">取消</button>
+                                        </div>
+                                    </div>
+                                </tr>
+                                <tr>
+                                    <td class="title">
+                                        报名工龄：
+                                    </td>
+                                    <td class="operation" colspan="3">
+                                        <input class="k-form-control  pull-left"style="width:174px!important;" type="text" name="agefront" id="agefront"
+                                            data-rules="{rules:{number:true},messages:{number:'请输入数字'}}"> 
+                                    
+                                    <div style="float:left;padding-left:10px; padding-top:10px">
+                                        <span>至：</span>
+                                    </div>
+
+                                   
+                                        <input class="k-form-control  pull-left"style="width:174px!important;" type="text" name="ageback" data-rules="{rules:{number:true},messages:{number:'请输入数字'}}">
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td></td>
+
+                                    <!-- <td class="operation list-checked " ><p class="saveMod" style="cursor:pointer">
+                                        <i class="fa fa-square-o inShow"></i>
+                                        <input type="hidden" value="" name="checkName" id="checkBox0">
+
+                                        <i class="fa fa-check-square-o inNone"></i>
+                                        <input type="hidden" value="" name="checkName" id="checkBox1"><span class="checkBox-black">
+                                            另存为模板</span></td></p> -->
+                                    <td><label><input type="checkbox" name="saveMod" /><span>另存为模板</span></label></td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="clearfix"></div>
+                </div>
+                <!--_toggleList.scss end-->
+                <div class="toggle-list">
+                    <div class="toggle-list-title">
+                        <i class="fa fa-caret-down"></i>课件上传
+                    </div>
+                    <div class="toggle-list-main">
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td class="title">
+                                        课件内容：
+                                    </td>
+                                    <td class="operation">
+                                        <select class="k-form-control">
+                                            <option value="">请选择</option>
+                                            <option value="1">课前阅读</option>
+                                            <option value="2">课堂课件</option>
+                                            <option value="3">课后作业</option>
+                                        </select>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td class="title">
+                                        课件资料：
+                                    </td>
+                                    <td class="operation img-wrap " style="height:30px">
+                                        <div class="show-img no-img" style="line-height:0px;height: 0;">
+                                            <a href="../Content/dist/images/bgNodata.png" target="_blank">
+                                                上传附件
+                                            </a>
+                                            <span class="fa fa-remove" data-fileid=""></span>
+                                        </div>
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="btn-wrap w-80">
+
+                            <input value="提交" class="k-btn k-btn-danger" type="button" id="btnSave">
+                            <input value="取消" class="k-btn k-btn-default" type="button">
+                        </div>
+
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script type="text/javascript" src="../Content/dist/vendor/require/require.js"></script>
+    <script type="text/javascript" src="../Content/dist/js/main.js"></script>
+    <!-- <script type="text/javascript" src="../Content/dist/js/requireConfig.js"></script>
+    <script type="text/javascript" src="/Content/dist/js/component.min.js"></script> -->
+    
+    <script>
+
+
+
+
+        require(['KM','Widget'], function (KM,Widget) {
+            // 时间
+            KM.DatePicker.Global($('.data-time-input'));
+            // 图片上传
+            // Component.imgUpload.init('.img-wrap', {
+            //     validate: validate, // 验证
+            //     uploadUrl: "",  // 上传保存的接口
+            //     removeUrl: "",  // 删除图片接口
+            //     imgUrlPrex: "", // 图片显示前缀
+            //     screenType: 'web'
+            // });
+            // 验证
+
+            var validate = new KM.ValidateTooltips($('#form'), {
+                rules: {
+
+                    // courseName: { "required": true },
+                    //  courseType: { "required": true },
+                    // dateBeginName: { 'compareTime': true },
+                    //dateEndName: { 'compareTime': true },
+                    ageback: { 'compareAge': true },
+
+                },
+                messages: {
+
+                    courseName: { "required": "请输入课程名称" },
+                    courseType: { "required": "请输入课程类型" },
+
+
+
+
+                },
+                tipsPlacement: {
+                    imgName: { position: 'right', target: $('#form').find('#imgBox') },
+                    // dateBeginName: { position: 'right', target: $('#form').find('#beginTimetip') },
+                    // dateEndName: { position: 'right', target: $('#form').find('#endTimetip') },
+                    // courseDate : { position: 'right', target: $('#form').find('.courseTime[name="courseTimetip"]') },
+                }
+            });
+            //,tipsPlacement:{position:'right',target: $(this).after('button')}
+            //结束时间开始时间比较
+
+
+
+
+
+            //  var $endTime=$('#endTime');
+            //  var endTimevalue = $endTime.val();
+            validate.addMethod('compareTime', function (endTimevalue, $endTime) {
+
+                var startTime = $('.beginTime[name="dateBeginName"]').val();
+                var end = endTimevalue.split('-').join("");
+                var start = startTime.split('-').join("");
+
+
+                return this.optional($endTime) || Number(end) > Number(start);
+            }, '结束时间必须大于开始时间');
+
+
+
+
+            //报名工龄比较
+            validate.addMethod('compareAge', function (value, $element) {
+
+                var startAge = $('#agefront').val();
+                return this.optional($element) || Number(value) > Number(startAge);
+
+            }, '结束时间必须大于开始时间');
+
+
+
+            //面授和网络课地址
+            $('#teachWay').change(function () {
+
+                var i = $('#teachWay').val();
+                if (i == 1) {
+
+                    $('.faceCourse').removeClass("noneAddress");
+                    $('.webCourse').addClass("noneAddress")
+                }
+                if (i == 2) {
+                    $('.webCourse').removeClass("noneAddress");
+                    $('.faceCourse').addClass("noneAddress");
+
+                }
+
+            })
+
+
+            //参与部门弹出框选择
+
+            $('.k-jumpout').focusin(function () {
+                $('.k-window').removeClass("k-window-none").addClass("k-window-show");
+
+            })
+            $('.k-window-close').click(function () {
+                $('.k-window').removeClass("k-window-show").addClass("k-window-none");
+
+            })
+            $('.k-btn-default').click(function () {
+                $('.k-window').removeClass("k-window-show").addClass("k-window-none");
+
+            })
+
+
+            //添加时间按钮
+            var i = 0;
+            var $course = $('.courseTimemod')
+
+            $('#form').on('click', '.addbtn', function () {
+
+
+                $(this).parents("tr").before($course.clone());
+                $('.courseTimemod:last').show();
+                $('.courseTimemod:last').find('input').attr("value", "");
+                $('.courseTimemod:last').find('input').attr("name", "courseDate" + i);
+                $('.courseTimemod:last').find('input').attr("id", "courseDateid" + i);
+                $('.delbtn:last').attr('name', 'delBtn' + i);
+                i++;
+
+
+                // i = 0;
+                // $(".courseTimemod").each(function () {
+                //     $(this).find('input').attr('id', 'courseDateid' + i);
+                //     console.log(i);
+                //     i++;
+                // });
+                var m = 0;
+                $(".courseTimemod").each(function () {
+
+                    $(this).find('input').attr("id", "courseDateid" + m++);
+                    
+                });
+                //  BUG修改
+                // for (var m = 0; m < i; m++) {
+                //     //   debugger
+                //     //   alert(m);
+                //     // alert( $('.courseTimemod:eq(m)').find('input'));
+                //     $('.courseTimemod:eq(m)').find('input').attr("id", "courseDateid" + m + 1);
+
+                // }
+                KM.DatePicker.Global($('.data-time-input'));
+                validate = new KM.ValidateTooltips($('#form'));
+                isClean = 0;
+                //     //}
+            })
+
+
+            //删除时间按钮(在添加时间中绑定事件)
+
+
+            var isClean = 0;
+            $('#form').on('click', '.delbtn', function () {
+                //debugger
+                //   var delElm = this.parentNode.previousSibling.firstElementChild.firstElementChild;
+                //  validate.removeRule(this.parentNode.previousSibling.firstElementChild.firstElementChild, 'required');
+
+                var m = 0;
+                $(".courseTimemod").each(function () {
+                   // debugger
+                    $(this).find('input').attr("id", "courseDateid" + m++);
+
+                });
+
+                if (isClean == 0) {
+                    //  BUG修改
+                    for (var n = 1; n < i; n++) {
+                        //alert(i+"/"+n);
+                      debugger
+                        // alert(document.getElementById('courseDateid'+n));
+                        validate.removeRule(document.getElementById('courseDateid' + n), 'required');
+                    }
+
+                    //  $('.k-tooltips').css('display','none');
+                    isClean = 1;
+                } 
+                validate.removeRule(document.getElementById('courseDateid' +i), 'required');
+
+                $('.data-time-input-add').removeClass("k-error");
+                $(this).parents("tr").remove();
+                i--;
+            })
+
+  
+
+
+            // 提交
+            $('#btnSave').on('click', function () {
+                if (validate.valid()) {
+
+                    $(this).parents('form').submit();
+                }
+            });
+
+
+            //search();
+        });
+
+
+
+    </script>
+
+</body>
+
+</html>

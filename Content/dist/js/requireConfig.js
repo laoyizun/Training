@@ -1,0 +1,1 @@
+var GLO_REQUIRE_CONFIG = { paths: { "component/imgUpload": "/Content/dist/js/component.min.js?rand=1540804360122", "component/popover": "/Content/dist/js/component.min.js?rand=1540804360122", "component/textarea": "/Content/dist/js/component.min.js?rand=1540804360122", component: "/Content/dist/js/component.min.js?rand=1540804360122" } };

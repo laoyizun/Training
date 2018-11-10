@@ -1,0 +1,48 @@
+.k-panel
+{
+    border: 1px solid #ddd;
+    overflow:hidden;
+    background:white;
+
+    .k-panel-head
+    {
+        border-bottom: 1px solid #ddd;
+        background:#FBFBFB;
+
+        .k-panel-title
+        {
+            margin: 0;
+            font-size: 14px;
+            padding-left: 10px;
+            height: 40px;
+            line-height: 40px;
+            position: relative;
+            overflow:hidden;
+
+
+            &.pointer
+            {
+                cursor: pointer;
+            }
+
+            .fa
+            {
+                position: absolute;
+                right: 15px;
+                top: 12px;
+                cursor: pointer;
+            }
+        }
+    }
+
+    .k-panel-body
+    {
+        padding: 10px;
+        overflow-y:auto;
+        overflow-x:hidden;
+    }
+
+    .k-panel-foot
+    {
+    }
+}
